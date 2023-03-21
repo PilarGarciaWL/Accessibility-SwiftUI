@@ -4,6 +4,15 @@
 
 ## User settings
 xcuserdata/
+StarWarsSad/StarWarsSad.xcworkspace/xcuserdata
+Podfile.lock
+/Build
+/buildSrc/build
+*.xcuserstate
+StarWarsSad/StarWarsSad.xcodeproj/xcuserdata
+StarWarsSad/StarWarsSad.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+StarWarsSad/StarWarsSad.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+StarWarsSad/StarWarsSad.xcodeproj/xcshareddata
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
