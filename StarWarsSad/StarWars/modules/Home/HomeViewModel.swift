@@ -12,11 +12,12 @@ import os
 class HomeViewModel: ObservableObject  {
     
     @Published var showProgress: Bool = true
-    @Published var planets: [Planet] = []
+    @Published var planet: Planet? = nil
     @Published var films: [Film] = []
     
     private let repository: RepositoryProtocol
     private var disposables = Set<AnyCancellable>()
+    private var planets: Planets?
     
     init(repository: RepositoryProtocol) {
         self.repository = repository
@@ -39,7 +40,8 @@ class HomeViewModel: ObservableObject  {
                 },
                 receiveValue: { [weak self] result in
                     Logger.success("HomeViewModel - getPlanets event: \(result)", type: .network)
-                    self?.planets = result.items
+                    self?.planets = result
+                    self?.planet = result.items.first
                 })
             .store(in: &disposables)
     }
