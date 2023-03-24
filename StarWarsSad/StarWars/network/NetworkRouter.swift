@@ -15,23 +15,22 @@ enum NetworkRouter {
     case Films
     case Species
     
-    
     var baseURL: String { return "https://swapi.dev/api/" }
     
     var path: String {
         switch self {
         case .Planets:
-            return "planets/"
+            return baseURL + "planets/"
         case .Spaceships:
-            return "spaceships/"
+            return baseURL + "spaceships/"
         case .Vehicles:
-            return "vehicles/"
+            return baseURL + "vehicles/"
         case .People:
-            return "people/"
+            return baseURL + "people/"
         case .Films:
-            return "films/"
+            return baseURL + "films/"
         case .Species:
-            return "species"
+            return baseURL + "species/"
         }
     }
     
@@ -41,10 +40,6 @@ enum NetworkRouter {
     
     var headerParams: [String: String] {
         return ["Content-Type" : "application/json; charset=utf-8"]
-    }
-    
-    var queryParams: [String: Any] {
-        return ["":""]
     }
 }
 

@@ -10,6 +10,7 @@ import Foundation
 
 protocol ServiceProtocol {
     func getPlanets() -> AnyPublisher<Planets, Error>
+    func getFilms() -> AnyPublisher<Films, Error>
 }
 
 public final class Service: ServiceProtocol {
@@ -23,9 +24,9 @@ public final class Service: ServiceProtocol {
             .eraseToAnyPublisher()
     }
     
-    func getFilmography() -> AnyPublisher<Planets, Error> {
+    func getFilms() -> AnyPublisher<Films, Error> {
         return httpAgent.run(NetworkRouter.Films)
-            .decode(type: PlanetsDTO.self, decoder: JSONDecoder())
+            .decode(type: FilmsDTO.self, decoder: JSONDecoder())
             .map { $0.toModel() }
             .eraseToAnyPublisher()
     }

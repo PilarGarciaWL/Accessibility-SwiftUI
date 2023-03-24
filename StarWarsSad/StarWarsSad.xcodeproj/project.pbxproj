@@ -70,7 +70,7 @@
 		B4F7B73B29CE20EC00CF2A4F /* FilmsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsDTO.swift; sourceTree = "<group>"; };
 		B4F7B73D29CE223D00CF2A4F /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 		B4F7B74229CE236800CF2A4F /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		B4F7B74429CE26F400CF2A4F /* StarWarsSad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "StarWarsSad-Info.plist"; sourceTree = "<group>"; };
+		B4F7B74429CE26F400CF2A4F /* StarWarsSad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StarWarsSad-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +173,7 @@
 			children = (
 				B41C9E9A29CA09A50062C2E0 /* HomeView.swift */,
 				B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */,
+				B4F7B74529CE348700CF2A4F /* Splash */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -254,6 +255,13 @@
 				B4F7B74229CE236800CF2A4F /* Navigator.swift */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		B4F7B74529CE348700CF2A4F /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -25,16 +25,10 @@ struct HTTPAgent {
             request.setValue(element.value, forHTTPHeaderField: element.key)
         }
         
-        //set method and body
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: requestRoute.queryParams, options: []) else {
-            return Fail(error: NetworkError.invalidRequestError("Error parsing post body")).eraseToAnyPublisher()
-        }
         request.httpMethod = requestRoute.method.rawValue
-        request.httpBody = httpBody
         
         Logger.debug("HTTPAgent - requestRoute path \(requestRoute.path)", type: .network)
         Logger.debug("HTTPAgent - requestRoute method \(requestRoute.method)", type: .network)
-        Logger.debug("HTTPAgent - requestRoute queryParams \(requestRoute.queryParams)", type: .network)
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { result -> Data in

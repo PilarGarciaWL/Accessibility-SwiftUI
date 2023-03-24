@@ -11,15 +11,13 @@ struct HomeView: View {
     
     @StateObject private var viewModel : HomeViewModel
     
-    init(repository: CRepositoryProtocol) {
+    init(repository: RepositoryProtocol) {
         _viewModel = StateObject(
             wrappedValue: HomeViewModel(
                 repository: repository
             )
         )
     }
-    
-    var body: some View {
     
     var body: some View {
         VStack {
@@ -72,6 +70,6 @@ struct Filmography: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(repository: Navigator.getRepositoryForPreview())
     }
 }

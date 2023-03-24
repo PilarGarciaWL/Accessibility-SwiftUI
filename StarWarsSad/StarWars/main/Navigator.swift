@@ -12,7 +12,7 @@ public enum Navigator {
     
     public static var composeApp: some View {
         return NavigationView {
-            HomeView()
+            HomeView(repository: repository)
         }
     }
     
