@@ -8,6 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject private var viewModel : HomeViewModel
+    
+    init(repository: CRepositoryProtocol) {
+        _viewModel = StateObject(
+            wrappedValue: HomeViewModel(
+                repository: repository
+            )
+        )
+    }
+    
+    var body: some View {
+    
     var body: some View {
         VStack {
             HStack {

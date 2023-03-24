@@ -15,6 +15,18 @@
 		B41C9EB429CA09A60062C2E0 /* StarWarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */; };
 		B41C9EB629CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */; };
 		B41C9EC429CA120A0062C2E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */; };
+		B4853FE429CCA4DA00E997A9 /* HTTPAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */; };
+		B4853FE629CCA59B00E997A9 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */; };
+		B4853FE829CCA78E00E997A9 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE729CCA78E00E997A9 /* NetworkResult.swift */; };
+		B4853FEC29CCA80000E997A9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FEB29CCA80000E997A9 /* Logger.swift */; };
+		B4853FEE29CCAA4300E997A9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FED29CCAA4300E997A9 /* Service.swift */; };
+		B4853FF129CCAC3600E997A9 /* PlanetsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FF029CCAC3600E997A9 /* PlanetsDTO.swift */; };
+		B4F7B73629CE1B6D00CF2A4F /* DTOMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73529CE1B6D00CF2A4F /* DTOMappers.swift */; };
+		B4F7B73829CE1D0600CF2A4F /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73729CE1D0600CF2A4F /* Planets.swift */; };
+		B4F7B73A29CE1EED00CF2A4F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73929CE1EED00CF2A4F /* Repository.swift */; };
+		B4F7B73C29CE20EC00CF2A4F /* FilmsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73B29CE20EC00CF2A4F /* FilmsDTO.swift */; };
+		B4F7B73E29CE223D00CF2A4F /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73D29CE223D00CF2A4F /* Films.swift */; };
+		B4F7B74329CE236800CF2A4F /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B74229CE236800CF2A4F /* Navigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +58,19 @@
 		B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITests.swift; sourceTree = "<group>"; };
 		B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAgent.swift; sourceTree = "<group>"; };
+		B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		B4853FE729CCA78E00E997A9 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		B4853FEB29CCA80000E997A9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B4853FED29CCAA4300E997A9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B4853FF029CCAC3600E997A9 /* PlanetsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDTO.swift; sourceTree = "<group>"; };
+		B4F7B73529CE1B6D00CF2A4F /* DTOMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOMappers.swift; sourceTree = "<group>"; };
+		B4F7B73729CE1D0600CF2A4F /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		B4F7B73929CE1EED00CF2A4F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		B4F7B73B29CE20EC00CF2A4F /* FilmsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsDTO.swift; sourceTree = "<group>"; };
+		B4F7B73D29CE223D00CF2A4F /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
+		B4F7B74229CE236800CF2A4F /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		B4F7B74429CE26F400CF2A4F /* StarWarsSad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "StarWarsSad-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +101,7 @@
 		B41C9E8C29CA09A50062C2E0 = {
 			isa = PBXGroup;
 			children = (
+				B4F7B74429CE26F400CF2A4F /* StarWarsSad-Info.plist */,
 				B41C9E9729CA09A50062C2E0 /* StarWars */,
 				B41C9EA829CA09A60062C2E0 /* StarWarsTests */,
 				B41C9EB229CA09A60062C2E0 /* StarWarsUITests */,
@@ -96,11 +122,13 @@
 		B41C9E9729CA09A50062C2E0 /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
-				B41C9E9829CA09A50062C2E0 /* StarWarsApp.swift */,
+				B4F7B74029CE235500CF2A4F /* main */,
 				B41C9EC229CA11DD0062C2E0 /* modules */,
 				B41C9EC629CA12170062C2E0 /* repository */,
-				B41C9EC729CA12240062C2E0 /* service */,
-				B41C9E9C29CA09A60062C2E0 /* Assets.xcassets */,
+				B4853FEF29CCAC1B00E997A9 /* models */,
+				B41C9EC729CA12240062C2E0 /* network */,
+				B4853FE929CCA7E200E997A9 /* utils */,
+				B4853FEA29CCA7EC00E997A9 /* resources */,
 				B41C9E9E29CA09A60062C2E0 /* Preview Content */,
 			);
 			path = StarWars;
@@ -134,6 +162,7 @@
 		B41C9EC229CA11DD0062C2E0 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				B4F7B73F29CE231100CF2A4F /* Common */,
 				B41C9EC529CA120E0062C2E0 /* Home */,
 			);
 			path = modules;
@@ -151,15 +180,80 @@
 		B41C9EC629CA12170062C2E0 /* repository */ = {
 			isa = PBXGroup;
 			children = (
+				B4F7B73929CE1EED00CF2A4F /* Repository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
 		};
-		B41C9EC729CA12240062C2E0 /* service */ = {
+		B41C9EC729CA12240062C2E0 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				B4853FED29CCAA4300E997A9 /* Service.swift */,
+				B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */,
+				B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */,
+				B4853FE729CCA78E00E997A9 /* NetworkResult.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		B4853FE929CCA7E200E997A9 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				B4853FEB29CCA80000E997A9 /* Logger.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		B4853FEA29CCA7EC00E997A9 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				B41C9E9C29CA09A60062C2E0 /* Assets.xcassets */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		B4853FEF29CCAC1B00E997A9 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				B4853FF329CCAF4700E997A9 /* dtos */,
+				B4F7B73429CE1AC500CF2A4F /* mappers */,
+				B4F7B73729CE1D0600CF2A4F /* Planets.swift */,
+				B4F7B73D29CE223D00CF2A4F /* Films.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		B4853FF329CCAF4700E997A9 /* dtos */ = {
+			isa = PBXGroup;
+			children = (
+				B4853FF029CCAC3600E997A9 /* PlanetsDTO.swift */,
+				B4F7B73B29CE20EC00CF2A4F /* FilmsDTO.swift */,
+			);
+			path = dtos;
+			sourceTree = "<group>";
+		};
+		B4F7B73429CE1AC500CF2A4F /* mappers */ = {
+			isa = PBXGroup;
+			children = (
+				B4F7B73529CE1B6D00CF2A4F /* DTOMappers.swift */,
+			);
+			path = mappers;
+			sourceTree = "<group>";
+		};
+		B4F7B73F29CE231100CF2A4F /* Common */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = service;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B4F7B74029CE235500CF2A4F /* main */ = {
+			isa = PBXGroup;
+			children = (
+				B41C9E9829CA09A50062C2E0 /* StarWarsApp.swift */,
+				B4F7B74229CE236800CF2A4F /* Navigator.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,8 +387,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41C9E9B29CA09A50062C2E0 /* HomeView.swift in Sources */,
+				B4F7B73829CE1D0600CF2A4F /* Planets.swift in Sources */,
+				B4F7B73C29CE20EC00CF2A4F /* FilmsDTO.swift in Sources */,
+				B4F7B73E29CE223D00CF2A4F /* Films.swift in Sources */,
+				B4853FEE29CCAA4300E997A9 /* Service.swift in Sources */,
+				B4853FE429CCA4DA00E997A9 /* HTTPAgent.swift in Sources */,
+				B4853FE629CCA59B00E997A9 /* NetworkRouter.swift in Sources */,
+				B4F7B73629CE1B6D00CF2A4F /* DTOMappers.swift in Sources */,
+				B4853FE829CCA78E00E997A9 /* NetworkResult.swift in Sources */,
+				B4853FEC29CCA80000E997A9 /* Logger.swift in Sources */,
 				B41C9EC429CA120A0062C2E0 /* HomeViewModel.swift in Sources */,
+				B4F7B74329CE236800CF2A4F /* Navigator.swift in Sources */,
 				B41C9E9929CA09A50062C2E0 /* StarWarsApp.swift in Sources */,
+				B4853FF129CCAC3600E997A9 /* PlanetsDTO.swift in Sources */,
+				B4F7B73A29CE1EED00CF2A4F /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +562,7 @@
 				DEVELOPMENT_TEAM = C2UZU6ZLJE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StarWarsSad-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -485,6 +592,7 @@
 				DEVELOPMENT_TEAM = C2UZU6ZLJE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StarWarsSad-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
