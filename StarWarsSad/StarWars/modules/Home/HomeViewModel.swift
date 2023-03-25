@@ -61,7 +61,7 @@ class HomeViewModel: ObservableObject  {
                 },
                 receiveValue: { [weak self] result in
                     Logger.success("HomeViewModel - getFilms event: \(result)", type: .network)
-                    self?.films = result.items
+                    self?.films = Array(result.items.prefix(4))
                 })
             .store(in: &disposables)
     }

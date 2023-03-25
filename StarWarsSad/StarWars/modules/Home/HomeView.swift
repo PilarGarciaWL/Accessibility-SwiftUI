@@ -20,39 +20,72 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ZStack {
+        VStack {
             
-            VStack {
-                HomeHeaderView(onMenuClick: {}, onSearchClick: {})
-                Spacer()
-            }
+            HomeHeaderView(onMenuClick: {}, onSearchClick: {})
             
-            VStack {
+            ScrollView {
                 
-                ScrollView {
+                VStack {
                     
-                    VStack {
-                        
-                        if let planet = viewModel.planet {
-                            PlanetInfoView(planet: planet)
+                    if let planet = viewModel.planet {
+                        PlanetInfoView(
+                            planet: planet,
+                            onReadMoreClicked: {}
+                        )
+                    }
+                    
+                    HStack(spacing: 24) {
+                        Button(action: {} ){
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Image(systemName: "airplane.circle.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 85, height: 85)
+                                    Text("Starships")
+                                }.padding(.vertical)
+                                Spacer()
+                            }
                         }
+                        .foregroundColor(.white)
+                        .background(
+                            Color.black,
+                            in: RoundedRectangle(cornerRadius: 41)
+                        )
                         
-                        HStack {
-                            
+                        Button(action: {} ){
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Image(systemName: "person.and.background.dotted")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 85, height: 85)
+                                    Text("Species")
+                                }.padding(.vertical)
+                                Spacer()
+                            }
                         }
-                        
+                        .foregroundColor(.white)
+                        .background(
+                            Color.black,
+                            in: RoundedRectangle(cornerRadius: 41)
+                        )
                         
                     }
                     
+                    if !viewModel.films.isEmpty {
+                        FilmsListView(
+                            items: viewModel.films,
+                            onFilmItemClick: { _ in },
+                            onViewAllFilms: {}
+                        )
+                    }
                 }
                 
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
             }
-            .padding(.top, 24)
-            .background(.clear)
         }
         .padding()
     }
@@ -70,19 +103,19 @@ struct HomeHeaderView: View {
                     .frame(width: 48, height: 48)
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(Color.blue, lineWidth: 1)
-                        )
-            }
-                        
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+            }.foregroundColor(.black)
+            
             Spacer()
             Button(action: onSearchClick) {
                 Image(systemName: "magnifyingglass")
                     .frame(width: 48, height: 48)
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(Color.blue, lineWidth: 1)
-                        )
-            }
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+            }.foregroundColor(.black)
         }
     }
     
@@ -91,48 +124,146 @@ struct HomeHeaderView: View {
 struct PlanetInfoView: View {
     
     var planet: Planet
+    var onReadMoreClicked: () -> Void
     
     var body: some View {
         
         ZStack {
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 41)
                 .padding(.top, 32)
-                .foregroundColor(.pink)
+                .foregroundColor(.gray)
             
             VStack {
                 Circle()
                     .frame(width: 236, height: 236)
                     .foregroundColor(.black)
                     .overlay{
-                        Text("Planeta")
+                        Text("Planet")
                             .foregroundColor(.white)
                     }
                 
                 Text(planet.name)
                 
                 VStack {
-                    HStack {
+                    VStack {
+                        HStack {
+                            Image(systemName: "cloud.sun.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                            
+                            Text("Climate: \(planet.climate)")
+                            Spacer()
+                        }
                         
+                        HStack {
+                            Image(systemName: "mountain.2")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                            Text("Terrain: \(planet.terrain)")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Image(systemName: "person.3.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                            Text("Population: \(planet.population)")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Image(systemName: "arrow.down.to.line")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                            Text("Gravity: \(planet.gravity)")
+                            Spacer()
+                        }
+                    }.padding(.all, 24)
+                    
+                    Button(action: { onReadMoreClicked() }) {
+                        HStack {
+                            Spacer()
+                            Text("Read More")
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
                     }
+                    .frame(minHeight: 49)
+                    .background(
+                        Color.black,
+                        in: RoundedRectangle(cornerRadius: 16)
+                    )
+                    .padding(.horizontal)
+                    .padding(.bottom)
                 }
                 .background(
-                    .black,
-                    in: RoundedRectangle(cornerRadius: 8)
+                    Color.yellow,
+                    in: RoundedRectangle(cornerRadius: 41)
                 )
             }
         }
         .padding(.top, 0)
         
-         
+        
     }
 }
 
 struct FilmsListView: View {
     
+    let items: [Film]
+    let onFilmItemClick: (Film) -> Void
+    let onViewAllFilms: () -> Void
+    
     var body: some View {
         VStack {
-            
+            VStack(alignment: .leading) {
+                Text("Filmography")
+                    .padding(.all, 8)
+                
+                ForEach(items, id: \.self) { item in
+                    HStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 96, height: 100)
+                            .foregroundColor(.white)
+                            .overlay{
+                                Text("Image")
+                            }
+                        
+                        VStack(alignment: .leading) {
+                            Text(item.title)
+                            Text("Espisode: \(item.episodeID)")
+                            Text("Director: \(item.director)")
+                        }
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.right")
+                    }
+                }
+                
+                Button(action: { onViewAllFilms() }) {
+                    HStack {
+                        Spacer()
+                        Text("View all films")
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                }
+                .frame(minHeight: 49)
+                .background(
+                    Color.black,
+                    in: RoundedRectangle(cornerRadius: 16)
+                )
+            }.padding()
         }
+        .background(
+            Color.yellow,
+            in: RoundedRectangle(cornerRadius: 41)
+        )
     }
 }
 

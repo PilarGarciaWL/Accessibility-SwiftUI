@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Films: Codable {
+struct Films {
     let count: Int
     let nextPageUrl: String?
     let previousPageUrl: String?
     let items: [Film]
 }
 
-struct Film: Codable {
+struct Film: Hashable {
     let title: String
     let episodeID: Int
     let openingCrawl: String
