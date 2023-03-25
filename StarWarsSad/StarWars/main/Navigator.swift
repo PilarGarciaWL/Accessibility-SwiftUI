@@ -28,18 +28,17 @@ public enum Navigator {
     
     //MARK: - Views
     
-    //public static var splash: Destination = Destination(tag: 0, view: AnyView(SplashRoute()))
-    
-    //public static var menu: Destination = Destination(tag: 1, view: AnyView(MenuRoute()))
+    static func getView(from destination: Destination) -> AnyView {
+        switch destination {
+        case .home:
+            return AnyView(HomeView(repository: repository))
+        case .filmDetail(let film):
+            return AnyView(FilmDetailView(film: film, repository: repository))
+        }
+    }
 }
 
-
-public class Destination {
-    let tag: Int
-    let view: AnyView
-    
-    init(tag: Int, view: AnyView) {
-        self.tag = tag
-        self.view = view
-    }
+enum Destination: Hashable {
+    case home
+    case filmDetail(film: Film)
 }

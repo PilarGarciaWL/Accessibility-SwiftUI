@@ -11,6 +11,7 @@ import Foundation
 protocol RepositoryProtocol {
     func getPlanets() -> AnyPublisher<Planets, Error>
     func getFilms() -> AnyPublisher<Films, Error>
+    func getCharacter(characterUrl: String) -> AnyPublisher<Character, Error>
 }
 
 public final class Repository: RepositoryProtocol {
@@ -27,6 +28,10 @@ public final class Repository: RepositoryProtocol {
     
     func getFilms() -> AnyPublisher<Films, Error> {
         service.getFilms()
+    }
+    
+    func getCharacter(characterUrl: String) -> AnyPublisher<Character, Error> {
+        service.getCharacter(from: characterUrl)
     }
     
 }

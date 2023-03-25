@@ -14,6 +14,7 @@ enum NetworkRouter {
     case People
     case Films
     case Species
+    case character(url: String)
     
     var baseURL: String { return "https://swapi.dev/api/" }
     
@@ -31,6 +32,8 @@ enum NetworkRouter {
             return baseURL + "films/"
         case .Species:
             return baseURL + "species/"
+        case .character(let url):
+            return url
         }
     }
     

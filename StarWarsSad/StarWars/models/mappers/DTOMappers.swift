@@ -62,3 +62,33 @@ extension FilmDTO {
         )
     }
 }
+
+extension CharactersDTO {
+    func toModel() -> Characters {
+        return Characters(
+            count: count,
+            nextPageUrl: next,
+            previousPageUrl: previous,
+            items: results.map { $0.toModel() })
+    }
+}
+
+extension CharacterDTO {
+    func toModel() -> Character {
+        return Character(
+            name: name,
+            birthYear: birthYear,
+            eyeColor: eyeColor,
+            gender: gender,
+            hairColor: hairColor,
+            height: height,
+            mass: mass,
+            skinColor: skinColor,
+            homeworld: homeworld,
+            films: films,
+            species: species,
+            starships: starships,
+            vehicles: vehicles
+        )
+    }
+}

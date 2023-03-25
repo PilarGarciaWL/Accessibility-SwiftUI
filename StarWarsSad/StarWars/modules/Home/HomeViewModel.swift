@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject  {
     @Published var showProgress: Bool = true
     @Published var planet: Planet? = nil
     @Published var films: [Film] = []
+    @Published var navigationPath: [Destination] = []
     
     private let repository: RepositoryProtocol
     private var disposables = Set<AnyCancellable>()
@@ -74,7 +75,7 @@ class HomeViewModel: ObservableObject  {
     }
     
     func onFilmItemClick(_ item: Film) {
-        
+        navigationPath.append(Destination.filmDetail(film: item))
     }
     
     func onViewAllFilmsClicked() {
