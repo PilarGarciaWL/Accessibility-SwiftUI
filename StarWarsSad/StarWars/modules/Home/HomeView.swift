@@ -22,69 +22,83 @@ struct HomeView: View {
     var body: some View {
         VStack {
             
-            HomeHeaderView(onMenuClick: {}, onSearchClick: {})
+            HomeHeaderView(
+                onMenuClick: { viewModel.onMenuClicked() },
+                onSearchClick: { viewModel.onSearchClicked() }
+            )
             
-            ScrollView {
-                
+            if viewModel.showProgress {
                 VStack {
-                    
-                    if let planet = viewModel.planet {
-                        PlanetInfoView(
-                            planet: planet,
-                            onReadMoreClicked: {}
-                        )
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        ProgressIndicator(color: .yellow)
+                        Spacer()
                     }
-                    
-                    HStack(spacing: 24) {
-                        Button(action: {} ){
-                            HStack {
-                                Spacer()
-                                VStack {
-                                    Image(systemName: "airplane.circle.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 85, height: 85)
-                                    Text("Starships")
-                                }.padding(.vertical)
-                                Spacer()
-                            }
+                    Spacer()
+                }
+            } else {
+                ScrollView {
+                    VStack {
+                        if let planet = viewModel.planet {
+                            PlanetInfoView(
+                                planet: planet,
+                                onReadMoreClicked: { viewModel.onPlanetReadMoreClicked(planet) }
+                            )
                         }
-                        .foregroundColor(.white)
-                        .background(
-                            Color.black,
-                            in: RoundedRectangle(cornerRadius: 41)
-                        )
                         
-                        Button(action: {} ){
-                            HStack {
-                                Spacer()
-                                VStack {
-                                    Image(systemName: "person.and.background.dotted")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 85, height: 85)
-                                    Text("Species")
-                                }.padding(.vertical)
-                                Spacer()
+                        HStack(spacing: 24) {
+                            Button(action: { viewModel.onStarshipsClicked() }) {
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Image(systemName: "airplane.circle.fill")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 85, height: 85)
+                                        Text("Starships")
+                                    }.padding(.vertical)
+                                    Spacer()
+                                }
                             }
+                            .foregroundColor(.white)
+                            .background(
+                                Color.black,
+                                in: RoundedRectangle(cornerRadius: 41)
+                            )
+                            
+                            Button(action: { viewModel.onSpeciesClicked() }) {
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Image(systemName: "person.and.background.dotted")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 85, height: 85)
+                                        Text("Species")
+                                    }.padding(.vertical)
+                                    Spacer()
+                                }
+                            }
+                            .foregroundColor(.white)
+                            .background(
+                                Color.black,
+                                in: RoundedRectangle(cornerRadius: 41)
+                            )
+                            
                         }
-                        .foregroundColor(.white)
-                        .background(
-                            Color.black,
-                            in: RoundedRectangle(cornerRadius: 41)
-                        )
                         
-                    }
-                    
-                    if !viewModel.films.isEmpty {
-                        FilmsListView(
-                            items: viewModel.films,
-                            onFilmItemClick: { _ in },
-                            onViewAllFilms: {}
-                        )
+                        if !viewModel.films.isEmpty {
+                            FilmsListView(
+                                items: viewModel.films,
+                                onFilmItemClick: { item in
+                                    viewModel.onFilmItemClick(item)
+                                },
+                                onViewAllFilms: { viewModel.onViewAllFilmsClicked() }
+                            )
+                        }
                     }
                 }
-                
             }
         }
         .padding()
@@ -222,6 +236,7 @@ struct FilmsListView: View {
         VStack {
             VStack(alignment: .leading) {
                 Text("Filmography")
+                    .bold()
                     .padding(.all, 8)
                 
                 ForEach(items, id: \.self) { item in

@@ -21,6 +21,7 @@
 		B4853FEC29CCA80000E997A9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FEB29CCA80000E997A9 /* Logger.swift */; };
 		B4853FEE29CCAA4300E997A9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FED29CCAA4300E997A9 /* Service.swift */; };
 		B4853FF129CCAC3600E997A9 /* PlanetsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FF029CCAC3600E997A9 /* PlanetsDTO.swift */; };
+		B4BD87DA29CF08CC003FA79A /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BD87D929CF08CC003FA79A /* ProgressIndicator.swift */; };
 		B4F7B73629CE1B6D00CF2A4F /* DTOMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73529CE1B6D00CF2A4F /* DTOMappers.swift */; };
 		B4F7B73829CE1D0600CF2A4F /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73729CE1D0600CF2A4F /* Planets.swift */; };
 		B4F7B73A29CE1EED00CF2A4F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7B73929CE1EED00CF2A4F /* Repository.swift */; };
@@ -64,6 +65,7 @@
 		B4853FEB29CCA80000E997A9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		B4853FED29CCAA4300E997A9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B4853FF029CCAC3600E997A9 /* PlanetsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDTO.swift; sourceTree = "<group>"; };
+		B4BD87D929CF08CC003FA79A /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		B4F7B73529CE1B6D00CF2A4F /* DTOMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOMappers.swift; sourceTree = "<group>"; };
 		B4F7B73729CE1D0600CF2A4F /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		B4F7B73929CE1EED00CF2A4F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		B4F7B73F29CE231100CF2A4F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B4BD87D929CF08CC003FA79A /* ProgressIndicator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				B4F7B73829CE1D0600CF2A4F /* Planets.swift in Sources */,
 				B4F7B73C29CE20EC00CF2A4F /* FilmsDTO.swift in Sources */,
 				B4F7B73E29CE223D00CF2A4F /* Films.swift in Sources */,
+				B4BD87DA29CF08CC003FA79A /* ProgressIndicator.swift in Sources */,
 				B4853FEE29CCAA4300E997A9 /* Service.swift in Sources */,
 				B4853FE429CCA4DA00E997A9 /* HTTPAgent.swift in Sources */,
 				B4853FE629CCA59B00E997A9 /* NetworkRouter.swift in Sources */,

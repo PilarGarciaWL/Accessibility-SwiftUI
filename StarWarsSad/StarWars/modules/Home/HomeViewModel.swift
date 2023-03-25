@@ -21,49 +21,64 @@ class HomeViewModel: ObservableObject  {
     
     init(repository: RepositoryProtocol) {
         self.repository = repository
-        getPlanets()
-        getFilms()
+        getHomeFeed()
     }
     
-    func getPlanets() {
+    func getHomeFeed() {
+        self.showProgress = true
+        
         repository.getPlanets()
+            .zip(repository.getFilms())
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] value in
+                    self?.showProgress = false
                     switch value {
                     case .failure(let error):
                         Logger.error(error.localizedDescription, type: .network)
                     case .finished:
-                        self?.showProgress = true
-                        Logger.info("HomeViewModel - getPlanets finished", type: .network)
+                        Logger.info("HomeViewModel - getHomeFeed finished", type: .network)
                     }
                 },
-                receiveValue: { [weak self] result in
-                    Logger.success("HomeViewModel - getPlanets event: \(result)", type: .network)
-                    self?.planets = result
-                    self?.planet = result.items.first
+                receiveValue: { [weak self] planets, films in
+                    Logger.success("HomeViewModel - getHomeFeed planets: \(planets)", type: .network)
+                    Logger.success("HomeViewModel - getHomeFeed films: \(films)", type: .network)
+                    self?.planets = planets
+                    self?.planet = planets.items.first
+                    self?.films = Array(films.items.prefix(4))
                 })
             .store(in: &disposables)
     }
     
-    func getFilms() {
-        repository.getFilms()
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { [weak self] value in
-                    switch value {
-                    case .failure(let error):
-                        Logger.error("HomeViewModel - getFilms error: \(error.localizedDescription)", type: .network)
-                    case .finished:
-                        self?.showProgress = true
-                        Logger.info("HomeViewModel - getFilms finished", type: .network)
-                    }
-                },
-                receiveValue: { [weak self] result in
-                    Logger.success("HomeViewModel - getFilms event: \(result)", type: .network)
-                    self?.films = Array(result.items.prefix(4))
-                })
-            .store(in: &disposables)
+    
+    //MARK: - Navigation methods
+    
+    func onMenuClicked() {
+        //TODO: Implement this
+    }
+    
+    func onSearchClicked() {
+        //TODO: Implement this
+    }
+    
+    func onPlanetReadMoreClicked(_ planet: Planet) {
+        //TODO: Implement this
+    }
+    
+    func onStarshipsClicked() {
+        //TODO: Implement this
+    }
+    
+    func onSpeciesClicked() {
+        //TODO: Implement this
+    }
+    
+    func onFilmItemClick(_ item: Film) {
+        
+    }
+    
+    func onViewAllFilmsClicked() {
+        //TODO: Implement this
     }
     
 }
