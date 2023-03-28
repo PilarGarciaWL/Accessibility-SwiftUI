@@ -73,6 +73,7 @@ struct FilmDetailView: View {
             }.padding(.all, 24)
         }
         .navigationTitle(viewModel.film.title)
+        .accentColor(.black)
     }
 }
 

@@ -20,93 +20,94 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
-            VStack {
-                
-                HomeHeaderView(
-                    onMenuClick: { viewModel.onMenuClicked() },
-                    onSearchClick: { viewModel.onSearchClicked() }
-                )
-                
-                if viewModel.showProgress {
-                    VStack {
+        VStack {
+            NavigationLink(
+                destination: viewModel.viewToNavigate,
+                isActive: $viewModel.doNavigate) { EmptyView() }
+            
+            HomeHeaderView(
+                onMenuClick: { viewModel.onMenuClicked() },
+                onSearchClick: { viewModel.onSearchClicked() }
+            )
+            
+            if viewModel.showProgress {
+                VStack {
+                    Spacer()
+                    HStack {
                         Spacer()
-                        HStack {
-                            Spacer()
-                            ProgressIndicator(color: .yellow)
-                            Spacer()
-                        }
+                        ProgressIndicator(color: .yellow)
                         Spacer()
                     }
-                } else {
-                    ScrollView {
-                        VStack {
-                            if let planet = viewModel.planet {
-                                PlanetInfoView(
-                                    planet: planet,
-                                    onReadMoreClicked: { viewModel.onPlanetReadMoreClicked(planet) }
-                                )
-                            }
-                            
-                            HStack(spacing: 24) {
-                                Button(action: { viewModel.onStarshipsClicked() }) {
-                                    HStack {
-                                        Spacer()
-                                        VStack {
-                                            Image(systemName: "airplane.circle.fill")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 85, height: 85)
-                                            Text("Starships")
-                                        }.padding(.vertical)
-                                        Spacer()
-                                    }
+                    Spacer()
+                }
+            } else {
+                ScrollView {
+                    VStack {
+                        if let planet = viewModel.planet {
+                            PlanetInfoView(
+                                planet: planet,
+                                onReadMoreClicked: { viewModel.onPlanetReadMoreClicked(planet) }
+                            )
+                        }
+                        
+                        HStack(spacing: 24) {
+                            Button(action: { viewModel.onStarshipsClicked() }) {
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Image(systemName: "airplane.circle.fill")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 85, height: 85)
+                                        Text("Starships")
+                                    }.padding(.vertical)
+                                    Spacer()
                                 }
-                                .foregroundColor(.white)
-                                .background(
-                                    Color.black,
-                                    in: RoundedRectangle(cornerRadius: 41)
-                                )
-                                
-                                Button(action: { viewModel.onSpeciesClicked() }) {
-                                    HStack {
-                                        Spacer()
-                                        VStack {
-                                            Image(systemName: "person.and.background.dotted")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 85, height: 85)
-                                            Text("Species")
-                                        }.padding(.vertical)
-                                        Spacer()
-                                    }
-                                }
-                                .foregroundColor(.white)
-                                .background(
-                                    Color.black,
-                                    in: RoundedRectangle(cornerRadius: 41)
-                                )
-                                
                             }
+                            .foregroundColor(.white)
+                            .background(
+                                Color.black,
+                                in: RoundedRectangle(cornerRadius: 41)
+                            )
                             
-                            if !viewModel.films.isEmpty {
-                                FilmsListView(
-                                    items: viewModel.films,
-                                    onFilmItemClick: { item in
-                                        viewModel.onFilmItemClick(item)
-                                    },
-                                    onViewAllFilms: { viewModel.onViewAllFilmsClicked() }
-                                )
+                            Button(action: { viewModel.onSpeciesClicked() }) {
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Image(systemName: "person.and.background.dotted")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 85, height: 85)
+                                        Text("Species")
+                                    }.padding(.vertical)
+                                    Spacer()
+                                }
                             }
+                            .foregroundColor(.white)
+                            .background(
+                                Color.black,
+                                in: RoundedRectangle(cornerRadius: 41)
+                            )
+                            
+                        }
+                        
+                        if !viewModel.films.isEmpty {
+                            FilmsListView(
+                                items: viewModel.films,
+                                onFilmItemClick: { item in
+                                    viewModel.onFilmItemClick(item)
+                                },
+                                onViewAllFilms: { viewModel.onViewAllFilmsClicked() }
+                            )
                         }
                     }
                 }
             }
-            .padding()
-            .navigationDestination(for: Destination.self) { destination in
-                Navigator.getView(from: destination)
-            }
-        }.accentColor(.black)
+        }
+        .padding()
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .accentColor(.black)
     }
 }
 
@@ -256,8 +257,11 @@ struct FilmsListView: View {
                             
                             VStack(alignment: .leading) {
                                 Text(item.title)
+                                    .multilineTextAlignment(.leading)
                                 Text("Espisode: \(item.episodeID)")
+                                    .multilineTextAlignment(.leading)
                                 Text("Director: \(item.director)")
+                                    .multilineTextAlignment(.leading)
                             }
                             
                             Spacer()

@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import os
+import SwiftUI
 
 class HomeViewModel: ObservableObject  {
     
@@ -15,6 +16,9 @@ class HomeViewModel: ObservableObject  {
     @Published var planet: Planet? = nil
     @Published var films: [Film] = []
     @Published var navigationPath: [Destination] = []
+    
+    @Published var viewToNavigate: AnyView = AnyView(EmptyView())
+    @Published var doNavigate: Bool = false
     
     private let repository: RepositoryProtocol
     private var disposables = Set<AnyCancellable>()
@@ -46,7 +50,7 @@ class HomeViewModel: ObservableObject  {
                     Logger.success("HomeViewModel - getHomeFeed films: \(films)", type: .network)
                     self?.planets = planets
                     self?.planet = planets.items.first
-                    self?.films = Array(films.items.prefix(4))
+                    self?.films = Array(films.items.sorted { $0.episodeID < $1.episodeID }.prefix(4))
                 })
             .store(in: &disposables)
     }
@@ -75,7 +79,8 @@ class HomeViewModel: ObservableObject  {
     }
     
     func onFilmItemClick(_ item: Film) {
-        navigationPath.append(Destination.filmDetail(film: item))
+        viewToNavigate = Navigator.getView(from: .filmDetail(film: item))
+        doNavigate =  true
     }
     
     func onViewAllFilmsClicked() {
