@@ -14,6 +14,11 @@ StarWarsSad/StarWarsSad.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceC
 StarWarsSad/StarWarsSad.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 StarWarsSad/StarWarsSad.xcodeproj/xcshareddata
 
+StarWarsSad/StarWarsSad.xcodeproj/xcuserdata
+StarWarsSad/StarWarsSad.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+StarWarsSad/StarWarsSad.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+StarWarsSad/StarWarsSad.xcodeproj/xcshareddata
+
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
@@ -97,3 +102,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+StarWarsHappy/StarWarsHappy.xcodeproj/project.xcworkspace/xcshareddata/
+
+*.xcworkspacedata
+
+*.xcscheme
