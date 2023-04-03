@@ -35,7 +35,7 @@ struct HomeView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        ProgressIndicator(color: .yellow)
+                        ProgressIndicator(color: Theme.colors.accent)
                         Spacer()
                     }
                     Spacer()
@@ -55,18 +55,19 @@ struct HomeView: View {
                                 HStack {
                                     Spacer()
                                     VStack {
-                                        Image(systemName: "airplane.circle.fill")
+                                        Image("ic_starships")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 85, height: 85)
+                                            .frame(width: 130, height: 105)
                                         Text("Starships")
+                                            .font(Theme.typography.body2)
                                     }.padding(.vertical)
                                     Spacer()
                                 }
                             }
                             .foregroundColor(.white)
                             .background(
-                                Color.black,
+                                Theme.colors.strokeDark,
                                 in: RoundedRectangle(cornerRadius: 41)
                             )
                             
@@ -74,18 +75,19 @@ struct HomeView: View {
                                 HStack {
                                     Spacer()
                                     VStack {
-                                        Image(systemName: "person.and.background.dotted")
+                                        Image("ic_yoda")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 85, height: 85)
+                                            .frame(width: 130, height: 105)
                                         Text("Species")
+                                            .font(Theme.typography.body2)
                                     }.padding(.vertical)
                                     Spacer()
                                 }
                             }
                             .foregroundColor(.white)
                             .background(
-                                Color.black,
+                                Theme.colors.strokeDark,
                                 in: RoundedRectangle(cornerRadius: 41)
                             )
                             
@@ -105,6 +107,7 @@ struct HomeView: View {
             }
         }
         .padding()
+        .background(Theme.colors.background1)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .accentColor(.black)
@@ -121,21 +124,25 @@ struct HomeHeaderView: View {
             Button(action: onMenuClick) {
                 Image(systemName: "line.3.horizontal")
                     .frame(width: 48, height: 48)
+                    .background(Theme.colors.background4)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(Color.black, lineWidth: 1)
+                            .stroke(Theme.colors.strokeLight, lineWidth: 1)
                     )
-            }.foregroundColor(.black)
+            }.foregroundColor(Theme.colors.text)
             
             Spacer()
             Button(action: onSearchClick) {
                 Image(systemName: "magnifyingglass")
                     .frame(width: 48, height: 48)
+                    .background(Theme.colors.background4)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(Color.black, lineWidth: 1)
+                            .stroke(Theme.colors.strokeLight, lineWidth: 1)
                     )
-            }.foregroundColor(.black)
+            }.foregroundColor(Theme.colors.text)
         }
     }
     
@@ -150,56 +157,119 @@ struct PlanetInfoView: View {
         
         ZStack {
             RoundedRectangle(cornerRadius: 41)
+                .fill(Theme.colors.background2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 41)
+                        .stroke(Theme.colors.strokeLight, lineWidth: 1)
+                )
                 .padding(.top, 32)
-                .foregroundColor(.gray)
+                .padding(.horizontal, 1)
             
             VStack {
-                Circle()
-                    .frame(width: 236, height: 236)
-                    .foregroundColor(.black)
-                    .overlay{
-                        Text("Planet")
-                            .foregroundColor(.white)
+                ZStack {
+                    VStack {
+                        Spacer()
+                        Ellipse()
+                            .stroke(
+                                LinearGradient(
+                                    gradient: Gradient(
+                                        colors: [Theme.colors.background2, Theme.colors.strokeLight]),
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
+                            .frame(width: 236, height: 99)
                     }
+                    
+                    VStack {
+                        Image("planet")
+                            .frame(width: 247, height: 240)
+                        
+                        HStack {
+                            Text("Rotation:")
+                                .font(Theme.typography.body2)
+                                .foregroundColor(Theme.colors.text)
+                            Text(planet.rotationPeriod)
+                                .font(Theme.typography.body1)
+                                .foregroundColor(Theme.colors.text)
+                        }
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 16)
+                        .background(Theme.colors.background2)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 41)
+                                .stroke(Theme.colors.strokeLight, lineWidth: 1)
+                        )
+                    }
+                }
                 
                 Text(planet.name)
+                    .font(Theme.typography.title1)
+                    .foregroundColor(Theme.colors.text)
                 
                 VStack {
                     VStack {
-                        HStack {
-                            Image(systemName: "cloud.sun.fill")
+                        HStack(spacing: 12) {
+                            Image("ic_climate")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                            
-                            Text("Climate: \(planet.climate)")
+                            HStack(spacing: 8)  {
+                                Text("Climate:")
+                                    .font(Theme.typography.body2)
+                                    .foregroundColor(Theme.colors.text)
+                                Text(planet.climate)
+                                    .font(Theme.typography.body1)
+                                    .foregroundColor(Theme.colors.text)
+                            }
                             Spacer()
                         }
                         
-                        HStack {
-                            Image(systemName: "mountain.2")
+                        HStack(spacing: 12) {
+                            Image("ic_terrain")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                            Text("Terrain: \(planet.terrain)")
+                            HStack(spacing: 8)  {
+                                Text("Terrain:")
+                                    .font(Theme.typography.body2)
+                                    .foregroundColor(Theme.colors.text)
+                                Text(planet.terrain)
+                                    .font(Theme.typography.body1)
+                                    .foregroundColor(Theme.colors.text)
+                            }
                             Spacer()
                         }
                         
-                        HStack {
-                            Image(systemName: "person.3.fill")
+                        HStack(spacing: 12) {
+                            Image("ic_population")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                            Text("Population: \(planet.population)")
+                            HStack(spacing: 8)  {
+                                Text("Population:")
+                                    .font(Theme.typography.body2)
+                                    .foregroundColor(Theme.colors.text)
+                                Text(planet.population)
+                                    .font(Theme.typography.body1)
+                                    .foregroundColor(Theme.colors.text)
+                            }
                             Spacer()
                         }
                         
-                        HStack {
-                            Image(systemName: "arrow.down.to.line")
+                        HStack(spacing: 12) {
+                            Image("ic_gravity")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                            Text("Gravity: \(planet.gravity)")
+                            HStack(spacing: 8)  {
+                                Text("Gravity:")
+                                    .font(Theme.typography.body2)
+                                    .foregroundColor(Theme.colors.text)
+                                Text(planet.gravity)
+                                    .font(Theme.typography.body1)
+                                    .foregroundColor(Theme.colors.text)
+                            }
                             Spacer()
                         }
                     }.padding(.all, 24)
@@ -208,26 +278,28 @@ struct PlanetInfoView: View {
                         HStack {
                             Spacer()
                             Text("Read More")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
+                                .font(Theme.typography.body2)
                             Spacer()
                         }
                     }
                     .frame(minHeight: 49)
                     .background(
-                        Color.black,
-                        in: RoundedRectangle(cornerRadius: 16)
+                        Theme.colors.accent,
+                        in: RoundedRectangle(cornerRadius: 40)
                     )
                     .padding(.horizontal)
                     .padding(.bottom)
                 }
                 .background(
-                    Color.yellow,
+                    Theme.colors.background4,
                     in: RoundedRectangle(cornerRadius: 41)
                 )
+                .padding(.vertical, 1)
+                .padding(.horizontal, 2)
             }
         }
         .padding(.top, 0)
-        
         
     }
 }
@@ -242,7 +314,8 @@ struct FilmsListView: View {
         VStack {
             VStack(alignment: .leading) {
                 Text("Filmography")
-                    .bold()
+                    .font(Theme.typography.title1)
+                    .foregroundColor(Theme.colors.text)
                     .padding(.all, 8)
                 
                 ForEach(items, id: \.self) { item in
@@ -257,11 +330,15 @@ struct FilmsListView: View {
                             
                             VStack(alignment: .leading) {
                                 Text(item.title)
+                                    .font(Theme.typography.title1)
                                     .multilineTextAlignment(.leading)
-                                Text("Espisode: \(item.episodeID)")
+                                    .lineLimit(1)
+                                    .foregroundColor(Theme.colors.text)
+                                Text(item.openingCrawl)
+                                    .font(Theme.typography.body1)
                                     .multilineTextAlignment(.leading)
-                                Text("Director: \(item.director)")
-                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(2)
+                                    .foregroundColor(Theme.colors.text)
                             }
                             
                             Spacer()
@@ -281,13 +358,13 @@ struct FilmsListView: View {
                 }
                 .frame(minHeight: 49)
                 .background(
-                    Color.black,
+                    Theme.colors.background2,
                     in: RoundedRectangle(cornerRadius: 16)
                 )
             }.padding()
         }
         .background(
-            Color.yellow,
+            Theme.colors.background2,
             in: RoundedRectangle(cornerRadius: 41)
         )
     }
