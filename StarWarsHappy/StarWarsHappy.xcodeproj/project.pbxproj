@@ -52,14 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B41C9E9529CA09A50062C2E0 /* StarWarsSad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsSad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41C9E9529CA09A50062C2E0 /* StarWarsHappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsHappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C9E9829CA09A50062C2E0 /* StarWarsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsApp.swift; sourceTree = "<group>"; };
 		B41C9E9A29CA09A50062C2E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B41C9E9C29CA09A60062C2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41C9E9F29CA09A60062C2E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B41C9EA529CA09A60062C2E0 /* StarWarsSadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsSadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41C9EA529CA09A60062C2E0 /* StarWarsHappyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsHappyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C9EA929CA09A60062C2E0 /* StarWarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsTests.swift; sourceTree = "<group>"; };
-		B41C9EAF29CA09A60062C2E0 /* StarWarsSadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsSadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41C9EAF29CA09A60062C2E0 /* StarWarsHappyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsHappyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITests.swift; sourceTree = "<group>"; };
 		B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		B4F7B73B29CE20EC00CF2A4F /* FilmsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsDTO.swift; sourceTree = "<group>"; };
 		B4F7B73D29CE223D00CF2A4F /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 		B4F7B74229CE236800CF2A4F /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		B4F7B74429CE26F400CF2A4F /* StarWarsSad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StarWarsSad-Info.plist"; sourceTree = "<group>"; };
+		B4F7B74429CE26F400CF2A4F /* StarWarsHappy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StarWarsHappy-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 		B41C9E8C29CA09A50062C2E0 = {
 			isa = PBXGroup;
 			children = (
-				B4F7B74429CE26F400CF2A4F /* StarWarsSad-Info.plist */,
+				B4F7B74429CE26F400CF2A4F /* StarWarsHappy-Info.plist */,
 				B41C9E9729CA09A50062C2E0 /* StarWars */,
 				B41C9EA829CA09A60062C2E0 /* StarWarsTests */,
 				B41C9EB229CA09A60062C2E0 /* StarWarsUITests */,
@@ -122,9 +122,9 @@
 		B41C9E9629CA09A50062C2E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B41C9E9529CA09A50062C2E0 /* StarWarsSad.app */,
-				B41C9EA529CA09A60062C2E0 /* StarWarsSadTests.xctest */,
-				B41C9EAF29CA09A60062C2E0 /* StarWarsSadUITests.xctest */,
+				B41C9E9529CA09A50062C2E0 /* StarWarsHappy.app */,
+				B41C9EA529CA09A60062C2E0 /* StarWarsHappyTests.xctest */,
+				B41C9EAF29CA09A60062C2E0 /* StarWarsHappyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,9 +290,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B41C9E9429CA09A50062C2E0 /* StarWarsSad */ = {
+		B41C9E9429CA09A50062C2E0 /* StarWarsHappy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B41C9EB929CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsSad" */;
+			buildConfigurationList = B41C9EB929CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsHappy" */;
 			buildPhases = (
 				B41C9E9129CA09A50062C2E0 /* Sources */,
 				B41C9E9229CA09A50062C2E0 /* Frameworks */,
@@ -302,14 +302,14 @@
 			);
 			dependencies = (
 			);
-			name = StarWarsSad;
+			name = StarWarsHappy;
 			productName = StarWars;
-			productReference = B41C9E9529CA09A50062C2E0 /* StarWarsSad.app */;
+			productReference = B41C9E9529CA09A50062C2E0 /* StarWarsHappy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B41C9EA429CA09A60062C2E0 /* StarWarsSadTests */ = {
+		B41C9EA429CA09A60062C2E0 /* StarWarsHappyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B41C9EBC29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsSadTests" */;
+			buildConfigurationList = B41C9EBC29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsHappyTests" */;
 			buildPhases = (
 				B41C9EA129CA09A60062C2E0 /* Sources */,
 				B41C9EA229CA09A60062C2E0 /* Frameworks */,
@@ -320,14 +320,14 @@
 			dependencies = (
 				B41C9EA729CA09A60062C2E0 /* PBXTargetDependency */,
 			);
-			name = StarWarsSadTests;
+			name = StarWarsHappyTests;
 			productName = StarWarsTests;
-			productReference = B41C9EA529CA09A60062C2E0 /* StarWarsSadTests.xctest */;
+			productReference = B41C9EA529CA09A60062C2E0 /* StarWarsHappyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B41C9EAE29CA09A60062C2E0 /* StarWarsSadUITests */ = {
+		B41C9EAE29CA09A60062C2E0 /* StarWarsHappyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B41C9EBF29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsSadUITests" */;
+			buildConfigurationList = B41C9EBF29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsHappyUITests" */;
 			buildPhases = (
 				B41C9EAB29CA09A60062C2E0 /* Sources */,
 				B41C9EAC29CA09A60062C2E0 /* Frameworks */,
@@ -338,9 +338,9 @@
 			dependencies = (
 				B41C9EB129CA09A60062C2E0 /* PBXTargetDependency */,
 			);
-			name = StarWarsSadUITests;
+			name = StarWarsHappyUITests;
 			productName = StarWarsUITests;
-			productReference = B41C9EAF29CA09A60062C2E0 /* StarWarsSadUITests.xctest */;
+			productReference = B41C9EAF29CA09A60062C2E0 /* StarWarsHappyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -366,7 +366,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B41C9E9029CA09A50062C2E0 /* Build configuration list for PBXProject "StarWarsSad" */;
+			buildConfigurationList = B41C9E9029CA09A50062C2E0 /* Build configuration list for PBXProject "StarWarsHappy" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -379,9 +379,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B41C9E9429CA09A50062C2E0 /* StarWarsSad */,
-				B41C9EA429CA09A60062C2E0 /* StarWarsSadTests */,
-				B41C9EAE29CA09A60062C2E0 /* StarWarsSadUITests */,
+				B41C9E9429CA09A50062C2E0 /* StarWarsHappy */,
+				B41C9EA429CA09A60062C2E0 /* StarWarsHappyTests */,
+				B41C9EAE29CA09A60062C2E0 /* StarWarsHappyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,12 +462,12 @@
 /* Begin PBXTargetDependency section */
 		B41C9EA729CA09A60062C2E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B41C9E9429CA09A50062C2E0 /* StarWarsSad */;
+			target = B41C9E9429CA09A50062C2E0 /* StarWarsHappy */;
 			targetProxy = B41C9EA629CA09A60062C2E0 /* PBXContainerItemProxy */;
 		};
 		B41C9EB129CA09A60062C2E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B41C9E9429CA09A50062C2E0 /* StarWarsSad */;
+			target = B41C9E9429CA09A50062C2E0 /* StarWarsHappy */;
 			targetProxy = B41C9EB029CA09A60062C2E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -598,7 +598,7 @@
 				DEVELOPMENT_TEAM = C2UZU6ZLJE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "StarWarsSad-Info.plist";
+				INFOPLIST_FILE = "StarWarsHappy-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -610,7 +610,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.worldline.accessibility.starwars.sad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worldline.accessibility.starwars.happy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -629,7 +629,7 @@
 				DEVELOPMENT_TEAM = C2UZU6ZLJE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "StarWarsSad-Info.plist";
+				INFOPLIST_FILE = "StarWarsHappy-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -641,7 +641,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.worldline.accessibility.starwars.sad;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worldline.accessibility.starwars.happy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -665,7 +665,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarWarsSad.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StarWarsSad";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarWarsHappy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StarWarsHappy";
 			};
 			name = Debug;
 		};
@@ -685,7 +685,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarWarsSad.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StarWarsSad";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarWarsHappy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StarWarsHappy";
 			};
 			name = Release;
 		};
@@ -728,7 +728,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B41C9E9029CA09A50062C2E0 /* Build configuration list for PBXProject "StarWarsSad" */ = {
+		B41C9E9029CA09A50062C2E0 /* Build configuration list for PBXProject "StarWarsHappy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B41C9EB729CA09A60062C2E0 /* Debug */,
@@ -737,7 +737,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B41C9EB929CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsSad" */ = {
+		B41C9EB929CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsHappy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B41C9EBA29CA09A60062C2E0 /* Debug */,
@@ -746,7 +746,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B41C9EBC29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsSadTests" */ = {
+		B41C9EBC29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsHappyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B41C9EBD29CA09A60062C2E0 /* Debug */,
@@ -755,7 +755,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B41C9EBF29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsSadUITests" */ = {
+		B41C9EBF29CA09A60062C2E0 /* Build configuration list for PBXNativeTarget "StarWarsHappyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B41C9EC029CA09A60062C2E0 /* Debug */,
