@@ -15,6 +15,7 @@
 		B41C9EB429CA09A60062C2E0 /* StarWarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */; };
 		B41C9EB629CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */; };
 		B41C9EC429CA120A0062C2E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */; };
+		B47EA52C29DAE8C9003B4CB9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47EA52B29DAE8C9003B4CB9 /* Splash.storyboard */; };
 		B4853FE429CCA4DA00E997A9 /* HTTPAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */; };
 		B4853FE629CCA59B00E997A9 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */; };
 		B4853FE829CCA78E00E997A9 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE729CCA78E00E997A9 /* NetworkResult.swift */; };
@@ -63,6 +64,7 @@
 		B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITests.swift; sourceTree = "<group>"; };
 		B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B47EA52B29DAE8C9003B4CB9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAgent.swift; sourceTree = "<group>"; };
 		B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		B4853FE729CCA78E00E997A9 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		B4F7B74529CE348700CF2A4F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				B47EA52B29DAE8C9003B4CB9 /* Splash.storyboard */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			files = (
 				B41C9EA029CA09A60062C2E0 /* Preview Assets.xcassets in Resources */,
 				B41C9E9D29CA09A60062C2E0 /* Assets.xcassets in Resources */,
+				B47EA52C29DAE8C9003B4CB9 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +606,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -633,6 +638,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
