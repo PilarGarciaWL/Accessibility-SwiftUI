@@ -11,7 +11,7 @@ struct Films {
     let count: Int
     let nextPageUrl: String?
     let previousPageUrl: String?
-    let items: [Film]
+    var items: [Film]
 }
 
 struct Film: Hashable {
@@ -26,4 +26,6 @@ struct Film: Hashable {
     let vehicles: [String]
     let characters: [String]
     let planets: [String]
+    var rating: String
+    var image: String
 }

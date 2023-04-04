@@ -123,7 +123,9 @@ struct FilmDetailView_Previews: PreviewProvider {
             "https://swapi.dev/api/planets/1/",
             "https://swapi.dev/api/planets/2/",
             "https://swapi.dev/api/planets/3/"
-        ]
+        ],
+        rating: "8.6",
+        image: "img_4"
     )
     
     static var previews: some View {

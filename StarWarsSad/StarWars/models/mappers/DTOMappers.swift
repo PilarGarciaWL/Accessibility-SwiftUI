@@ -58,7 +58,9 @@ extension FilmDTO {
             starships: starships,
             vehicles: vehicles,
             characters: characters,
-            planets: planets
+            planets: planets,
+            rating: "",
+            image: ""
         )
     }
 }

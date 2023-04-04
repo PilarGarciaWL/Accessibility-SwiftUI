@@ -13,6 +13,8 @@ struct Typography {
     var title2: Font
     var body1: Font
     var body2: Font
+    var subtitle1: Font
+    var subtitle2: Font
 }
 
 struct Colors {
@@ -61,6 +63,8 @@ struct Theme {
         title1: Font.system(size: 24, weight: .medium),
         title2: Font.system(size: 20, weight: .medium),
         body1: Font.system(size: 18, weight: .regular),
-        body2: Font.system(size: 18, weight: .medium)
+        body2: Font.system(size: 18, weight: .medium),
+        subtitle1: Font.system(size: 16, weight: .regular),
+        subtitle2: Font.system(size: 16, weight: .bold)
     )
 }

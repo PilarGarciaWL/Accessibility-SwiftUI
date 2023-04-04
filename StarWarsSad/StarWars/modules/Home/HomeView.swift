@@ -20,7 +20,7 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack() {
             NavigationLink(
                 destination: viewModel.viewToNavigate,
                 isActive: $viewModel.doNavigate) { EmptyView() }
@@ -42,7 +42,7 @@ struct HomeView: View {
                 }
             } else {
                 ScrollView {
-                    VStack {
+                    VStack(spacing: 24) {
                         if let planet = viewModel.planet {
                             PlanetInfoView(
                                 planet: planet,
@@ -187,10 +187,10 @@ struct PlanetInfoView: View {
                         
                         HStack {
                             Text("Rotation:")
-                                .font(Theme.typography.body2)
+                                .font(Theme.typography.subtitle2)
                                 .foregroundColor(Theme.colors.text)
                             Text(planet.rotationPeriod)
-                                .font(Theme.typography.body1)
+                                .font(Theme.typography.subtitle1)
                                 .foregroundColor(Theme.colors.text)
                         }
                         .padding(.vertical, 4)
@@ -321,46 +321,60 @@ struct FilmsListView: View {
                 ForEach(items, id: \.self) { item in
                     Button(action: { onFilmItemClick(item) }) {
                         HStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(width: 96, height: 100)
-                                .foregroundColor(.white)
-                                .overlay{
-                                    Text("Image")
-                                }
                             
-                            VStack(alignment: .leading) {
+                            Image(item.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 96, height: 100)
+                            
+                            VStack(alignment: .leading, spacing: 0) {
                                 Text(item.title)
-                                    .font(Theme.typography.title1)
+                                    .font(Theme.typography.title2)
                                     .multilineTextAlignment(.leading)
                                     .lineLimit(1)
                                     .foregroundColor(Theme.colors.text)
                                 Text(item.openingCrawl)
-                                    .font(Theme.typography.body1)
+                                    .font(Theme.typography.subtitle1)
                                     .multilineTextAlignment(.leading)
                                     .lineLimit(2)
                                     .foregroundColor(Theme.colors.text)
+                                HStack {
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(Theme.colors.accent)
+                                        .frame(width: 20, height: 20)
+                                    Text(item.rating)
+                                        .font(Theme.typography.subtitle1)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(Theme.colors.text)
+                                }
+                                .padding(.vertical, 6)
                             }
                             
                             Spacer()
                             
                             Image(systemName: "chevron.right")
+                                .foregroundColor(Theme.colors.strokeLight)
                         }
-                    }.foregroundColor(.black)
+                    }
                 }
                 
                 Button(action: { onViewAllFilms() }) {
                     HStack {
                         Spacer()
                         Text("View all films")
-                            .foregroundColor(.white)
+                            .font(Theme.typography.body2)
+                            .foregroundColor(Theme.colors.background2)
                         Spacer()
                     }
                 }
                 .frame(minHeight: 49)
                 .background(
-                    Theme.colors.background2,
-                    in: RoundedRectangle(cornerRadius: 16)
+                    Theme.colors.accent,
+                    in: RoundedRectangle(cornerRadius: 40)
                 )
+                .padding(.top, 24)
             }.padding()
         }
         .background(
