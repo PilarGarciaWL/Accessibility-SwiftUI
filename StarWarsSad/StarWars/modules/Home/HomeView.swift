@@ -17,6 +17,14 @@ struct HomeView: View {
                 repository: repository
             )
         )
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(Theme.colors.background1)
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
     
     var body: some View {
@@ -110,7 +118,6 @@ struct HomeView: View {
         .background(Theme.colors.background1)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .accentColor(.black)
     }
 }
 
@@ -322,7 +329,7 @@ struct FilmsListView: View {
                     Button(action: { onFilmItemClick(item) }) {
                         HStack {
                             
-                            Image(item.image)
+                            Image(item.thumbnail)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 96, height: 100)

@@ -49,6 +49,7 @@ extension FilmDTO {
     func toModel() -> Film {
         return Film(
             title: title,
+            completeTitle: "",
             episodeID: episodeID,
             openingCrawl: openingCrawl,
             director: director,
@@ -60,6 +61,7 @@ extension FilmDTO {
             characters: characters,
             planets: planets,
             rating: "",
+            thumbnail: "",
             image: ""
         )
     }

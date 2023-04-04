@@ -16,6 +16,7 @@ struct Films {
 
 struct Film: Hashable {
     let title: String
+    var completeTitle: String
     let episodeID: Int
     let openingCrawl: String
     let director: String
@@ -27,5 +28,6 @@ struct Film: Hashable {
     let characters: [String]
     let planets: [String]
     var rating: String
+    var thumbnail: String
     var image: String
 }
