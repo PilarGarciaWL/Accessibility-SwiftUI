@@ -14,7 +14,7 @@ class HomeViewModel: ObservableObject  {
     
     @Published var showProgress: Bool = true
     @Published var planet: Planet? = nil
-    @Published var films: [Film] = []
+    @Published var filmography: [Film] = []
     @Published var navigationPath: [Destination] = []
     
     @Published var viewToNavigate: AnyView = AnyView(EmptyView())
@@ -23,6 +23,7 @@ class HomeViewModel: ObservableObject  {
     private let repository: RepositoryProtocol
     private var disposables = Set<AnyCancellable>()
     private var planets: Planets?
+    private var films: [Film] = []
     
     init(repository: RepositoryProtocol) {
         self.repository = repository
@@ -50,7 +51,8 @@ class HomeViewModel: ObservableObject  {
                     Logger.success("HomeViewModel - getHomeFeed films: \(films)", type: .network)
                     self?.planets = planets
                     self?.planet = planets.items.first
-                    self?.films = Array(films.items.sorted { $0.episodeID < $1.episodeID }.prefix(4))
+                    self?.films = films.items.sorted { $0.episodeID < $1.episodeID }
+                    self?.filmography = Array(films.items.sorted { $0.episodeID < $1.episodeID }.prefix(4))
                 })
             .store(in: &disposables)
     }
@@ -79,7 +81,13 @@ class HomeViewModel: ObservableObject  {
     }
     
     func onFilmItemClick(_ item: Film) {
-        viewToNavigate = Navigator.getView(from: .filmDetail(film: item))
+        var chronology: [Film] = []
+        if let index: Int = films.firstIndex(where: { $0.episodeID == item.episodeID }) {
+            if index+1 < films.count {
+                chronology = Array(films[index+1...(films.count-1)])
+            }
+        }
+        viewToNavigate = Navigator.getView(from: .filmDetail(film: item, chronology: chronology))
         doNavigate =  true
     }
     

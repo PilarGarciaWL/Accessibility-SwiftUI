@@ -14,10 +14,11 @@ struct FilmDetailView: View {
     //MARK: - Presentation Propertiers
     @Environment(\.presentationMode) var presentation
     
-    init(film: Film, repository: RepositoryProtocol) {
+    init(film: Film, chronology: [Film], repository: RepositoryProtocol) {
         _viewModel = StateObject(
             wrappedValue: FilmDetailViewModel(
                 film: film,
+                chronology: chronology,
                 repository: repository
             )
         )
@@ -119,27 +120,41 @@ struct FilmDetailView: View {
                 }.padding(.all, 16)
                 
                 VStack(alignment: .leading) {
-                    Text("Characters")
-                        .bold()
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(viewModel.characters, id: \.self) { character in
-                                VStack {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .frame(
-                                            width: 100,
-                                            height: 100
-                                        )
-                                        .foregroundColor(.yellow)
-                                        .overlay{
-                                            Text("Image")
-                                        }
-                                    Text(character.name)
+                    Text("Next on the chronology:")
+                        .font(Theme.typography.title1)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(Theme.colors.text)
+                        .padding(.horizontal, 28)
+                    
+                    HStack(alignment: .top) {
+                        ForEach(viewModel.chronology, id: \.self) { item in
+                            VStack(alignment: .center) {
+                                Image(item.thumbnail)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 96, height: 100)
+                                
+                                Text(item.title)
+                                    .font(Theme.typography.title2)
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(Theme.colors.text)
+                                
+                                HStack {
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(Theme.colors.accent)
+                                        .frame(width: 20, height: 20)
+                                    Text(item.rating)
+                                        .font(Theme.typography.subtitle1)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(Theme.colors.text)
                                 }
                             }
-                            
                         }
-                    }
+                        
+                        Spacer()
+                    }.padding(.all, 16)
                 }
                 .padding(.vertical, 24)
                 .edgesIgnoringSafeArea(.bottom)
@@ -234,6 +249,10 @@ struct FilmDetailView_Previews: PreviewProvider {
     )
     
     static var previews: some View {
-        FilmDetailView(film: film, repository: Navigator.getRepositoryForPreview())
+        FilmDetailView(
+            film: film,
+            chronology: [],
+            repository: Navigator.getRepositoryForPreview()
+        )
     }
 }

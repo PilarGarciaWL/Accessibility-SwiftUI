@@ -101,9 +101,9 @@ struct HomeView: View {
                             
                         }
                         
-                        if !viewModel.films.isEmpty {
+                        if !viewModel.filmography.isEmpty {
                             FilmsListView(
-                                items: viewModel.films,
+                                items: viewModel.filmography,
                                 onFilmItemClick: { item in
                                     viewModel.onFilmItemClick(item)
                                 },

@@ -32,13 +32,13 @@ public enum Navigator {
         switch destination {
         case .home:
             return AnyView(HomeView(repository: repository))
-        case .filmDetail(let film):
-            return AnyView(FilmDetailView(film: film, repository: repository))
+        case .filmDetail(let film, let chronology):
+            return AnyView(FilmDetailView(film: film, chronology: chronology, repository: repository))
         }
     }
 }
 
 enum Destination: Hashable {
     case home
-    case filmDetail(film: Film)
+    case filmDetail(film: Film, chronology: [Film])
 }
