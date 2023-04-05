@@ -31,3 +31,9 @@ struct Film: Hashable {
     var thumbnail: String
     var image: String
 }
+
+enum FilmographyOption: String {
+    case all = "All"
+    case movies = "Movies"
+    case series = "Series"
+}

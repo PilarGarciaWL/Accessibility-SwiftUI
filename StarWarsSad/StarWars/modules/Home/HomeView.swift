@@ -101,15 +101,17 @@ struct HomeView: View {
                             
                         }
                         
-                        if !viewModel.filmography.isEmpty {
-                            FilmsListView(
-                                items: viewModel.filmography,
-                                onFilmItemClick: { item in
-                                    viewModel.onFilmItemClick(item)
-                                },
-                                onViewAllFilms: { viewModel.onViewAllFilmsClicked() }
-                            )
-                        }
+                        FilmsListView(
+                            items: viewModel.filmography,
+                            selectedFilmographyOption: viewModel.selectedFilmographyOption,
+                            onFilmItemClick: { item in
+                                viewModel.onFilmItemClick(item)
+                            },
+                            onViewAllFilms: { viewModel.onViewAllFilmsClicked() },
+                            onOptionClicked: { item in
+                                viewModel.onFilmographyOptionClicked(item)
+                            }
+                        )
                     }
                 }
             }
@@ -284,7 +286,7 @@ struct PlanetInfoView: View {
                     Button(action: { onReadMoreClicked() }) {
                         HStack {
                             Spacer()
-                            Text("Read More")
+                            Text("Read more of \(planet.name)")
                                 .foregroundColor(.black)
                                 .font(Theme.typography.body2)
                             Spacer()
@@ -314,8 +316,10 @@ struct PlanetInfoView: View {
 struct FilmsListView: View {
     
     let items: [Film]
+    let selectedFilmographyOption: FilmographyOption
     let onFilmItemClick: (Film) -> Void
     let onViewAllFilms: () -> Void
+    var onOptionClicked: (FilmographyOption) -> Void
     
     var body: some View {
         VStack {
@@ -325,69 +329,137 @@ struct FilmsListView: View {
                     .foregroundColor(Theme.colors.text)
                     .padding(.all, 8)
                 
-                ForEach(items, id: \.self) { item in
-                    Button(action: { onFilmItemClick(item) }) {
-                        HStack {
-                            
-                            Image(item.thumbnail)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 96, height: 100)
-                            
-                            VStack(alignment: .leading, spacing: 0) {
-                                Text(item.title)
-                                    .font(Theme.typography.title2)
-                                    .multilineTextAlignment(.leading)
-                                    .lineLimit(1)
-                                    .foregroundColor(Theme.colors.text)
-                                Text(item.openingCrawl)
-                                    .font(Theme.typography.subtitle1)
-                                    .multilineTextAlignment(.leading)
-                                    .lineLimit(2)
-                                    .foregroundColor(Theme.colors.text)
-                                HStack {
-                                    Image(systemName: "star.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(Theme.colors.accent)
-                                        .frame(width: 20, height: 20)
-                                    Text(item.rating)
-                                        .font(Theme.typography.subtitle1)
-                                        .multilineTextAlignment(.leading)
-                                        .foregroundColor(Theme.colors.text)
-                                }
-                                .padding(.vertical, 6)
-                            }
-                            
-                            Spacer()
-                            
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(Theme.colors.strokeLight)
-                        }
-                    }
+                HStack {
+                    FilmographyOptionView(
+                        item: .all,
+                        isSelected: selectedFilmographyOption == .all,
+                        onOptionClicked: onOptionClicked
+                    )
+                    FilmographyOptionView(
+                        item: .movies,
+                        isSelected: selectedFilmographyOption == .movies,
+                        onOptionClicked: onOptionClicked
+                    )
+                    FilmographyOptionView(
+                        item: .series,
+                        isSelected: selectedFilmographyOption == .series,
+                        onOptionClicked: onOptionClicked
+                    )
                 }
                 
-                Button(action: { onViewAllFilms() }) {
+                if items.isEmpty {
                     HStack {
                         Spacer()
-                        Text("View all films")
-                            .font(Theme.typography.body2)
-                            .foregroundColor(Theme.colors.background2)
+                        Text("There are no items. More to come!")
+                            .font(Theme.typography.body1)
+                            .foregroundColor(Theme.colors.text)
                         Spacer()
+                    }.padding(.vertical, 24)
+                } else {
+                    ForEach(items, id: \.self) { item in
+                        Button(action: { onFilmItemClick(item) }) {
+                            HStack {
+                                
+                                Image(item.thumbnail)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 96, height: 100)
+                                
+                                VStack(alignment: .leading, spacing: 0) {
+                                    Text(item.title)
+                                        .font(Theme.typography.title3)
+                                        .multilineTextAlignment(.leading)
+                                        .lineLimit(1)
+                                        .foregroundColor(Theme.colors.text)
+                                    Text(item.openingCrawl)
+                                        .font(Theme.typography.subtitle1)
+                                        .multilineTextAlignment(.leading)
+                                        .lineLimit(2)
+                                        .foregroundColor(Theme.colors.strokeLight)
+                                    HStack {
+                                        Image(systemName: "star.fill")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(Theme.colors.accent)
+                                            .frame(width: 20, height: 20)
+                                        Text(item.rating)
+                                            .font(Theme.typography.subtitle1)
+                                            .multilineTextAlignment(.leading)
+                                            .foregroundColor(Theme.colors.text)
+                                    }
+                                    .padding(.vertical, 6)
+                                }
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(Theme.colors.strokeLight)
+                                    .frame(width: 24, height: 24)
+                                    .padding(.trailing, 12)
+                            }
+                        }
+                        .background(
+                            Theme.colors.background3,
+                            in: RoundedRectangle(cornerRadius: 20)
+                        )
                     }
+                    
+                    Button(action: { onViewAllFilms() }) {
+                        HStack {
+                            Spacer()
+                            Text("View all movies")
+                                .font(Theme.typography.body2)
+                                .foregroundColor(Theme.colors.background2)
+                            Spacer()
+                        }
+                    }
+                    .frame(minHeight: 49)
+                    .background(
+                        Theme.colors.accent,
+                        in: RoundedRectangle(cornerRadius: 40)
+                    )
+                    .padding(.top, 24)
                 }
-                .frame(minHeight: 49)
-                .background(
-                    Theme.colors.accent,
-                    in: RoundedRectangle(cornerRadius: 40)
-                )
-                .padding(.top, 24)
             }.padding()
         }
         .background(
             Theme.colors.background2,
             in: RoundedRectangle(cornerRadius: 41)
         )
+    }
+}
+
+struct FilmographyOptionView: View {
+    var item: FilmographyOption
+    var isSelected: Bool
+    
+    var onOptionClicked: (FilmographyOption) -> Void
+    
+    var body: some View {
+        Button(action: {
+            onOptionClicked(item)
+        }) {
+            HStack(spacing: 8) {
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .foregroundColor(Theme.colors.text)
+                }
+                
+                Text(item.rawValue)
+                    .foregroundColor(Theme.colors.text)
+                    .font(Theme.typography.body2)
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .background(
+                isSelected ? Theme.colors.strokeDark : .clear,
+                in: RoundedRectangle(cornerRadius: 100)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 100)
+                    .stroke(isSelected ? .clear : Theme.colors.strokeDark, lineWidth: 1)
+            )
+        }
     }
 }
 

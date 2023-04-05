@@ -121,7 +121,7 @@ struct FilmDetailView: View {
                 
                 VStack(alignment: .leading) {
                     Text("Next on the chronology:")
-                        .font(Theme.typography.title1)
+                        .font(Theme.typography.title2)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Theme.colors.text)
                         .padding(.horizontal, 28)

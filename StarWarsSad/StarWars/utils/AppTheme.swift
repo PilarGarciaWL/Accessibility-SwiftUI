@@ -11,6 +11,7 @@ import SwiftUI
 struct Typography {
     var title1: Font
     var title2: Font
+    var title3: Font
     var body1: Font
     var body2: Font
     var subtitle1: Font
@@ -60,8 +61,9 @@ struct Theme {
     )
     
     static let typography: Typography = Typography(
-        title1: Font.system(size: 24, weight: .medium),
-        title2: Font.system(size: 20, weight: .medium),
+        title1: Font.system(size: 28, weight: .medium),
+        title2: Font.system(size: 24, weight: .medium),
+        title3: Font.system(size: 20, weight: .medium),
         body1: Font.system(size: 18, weight: .regular),
         body2: Font.system(size: 18, weight: .medium),
         subtitle1: Font.system(size: 16, weight: .regular),

@@ -16,6 +16,7 @@ class HomeViewModel: ObservableObject  {
     @Published var planet: Planet? = nil
     @Published var filmography: [Film] = []
     @Published var navigationPath: [Destination] = []
+    @Published var selectedFilmographyOption: FilmographyOption = .all
     
     @Published var viewToNavigate: AnyView = AnyView(EmptyView())
     @Published var doNavigate: Bool = false
@@ -93,6 +94,18 @@ class HomeViewModel: ObservableObject  {
     
     func onViewAllFilmsClicked() {
         //TODO: Implement this
+    }
+    
+    func onFilmographyOptionClicked(_ option: FilmographyOption) {
+        selectedFilmographyOption = option
+        switch option {
+        case .all:
+            filmography = Array(films.sorted { $0.episodeID < $1.episodeID }.prefix(4))
+        case .movies:
+            filmography = Array(films.sorted { $0.episodeID < $1.episodeID }.prefix(4))
+        case .series:
+            filmography = []
+        }
     }
     
 }
