@@ -292,7 +292,7 @@ struct PlanetInfoView: View {
                             Spacer()
                         }
                     }
-                    .frame(minHeight: 49)
+                    .frame(height: 49)
                     .background(
                         Theme.colors.accent,
                         in: RoundedRectangle(cornerRadius: 40)
@@ -357,51 +357,52 @@ struct FilmsListView: View {
                     }.padding(.vertical, 24)
                 } else {
                     ForEach(items, id: \.self) { item in
-                        Button(action: { onFilmItemClick(item) }) {
-                            HStack {
-                                
-                                Image(item.thumbnail)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 96, height: 100)
-                                
-                                VStack(alignment: .leading, spacing: 0) {
-                                    Text(item.title)
-                                        .font(Theme.typography.title3)
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(1)
-                                        .foregroundColor(Theme.colors.text)
-                                    Text(item.openingCrawl)
+                        HStack {
+                            
+                            Image(item.thumbnail)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 96, height: 100)
+                            
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text(item.title)
+                                    .font(Theme.typography.title3)
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(1)
+                                    .foregroundColor(Theme.colors.text)
+                                Text(item.openingCrawl)
+                                    .font(Theme.typography.subtitle1)
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(2)
+                                    .foregroundColor(Theme.colors.strokeLight)
+                                HStack {
+                                    Image(systemName: "star.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(Theme.colors.accent)
+                                        .frame(width: 20, height: 20)
+                                    Text(item.rating)
                                         .font(Theme.typography.subtitle1)
                                         .multilineTextAlignment(.leading)
-                                        .lineLimit(2)
-                                        .foregroundColor(Theme.colors.strokeLight)
-                                    HStack {
-                                        Image(systemName: "star.fill")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .foregroundColor(Theme.colors.accent)
-                                            .frame(width: 20, height: 20)
-                                        Text(item.rating)
-                                            .font(Theme.typography.subtitle1)
-                                            .multilineTextAlignment(.leading)
-                                            .foregroundColor(Theme.colors.text)
-                                    }
-                                    .padding(.vertical, 6)
+                                        .foregroundColor(Theme.colors.text)
                                 }
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(Theme.colors.strokeLight)
-                                    .frame(width: 24, height: 24)
-                                    .padding(.trailing, 12)
+                                .padding(.vertical, 6)
                             }
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(Theme.colors.strokeLight)
+                                .frame(width: 24, height: 24)
+                                .padding(.trailing, 12)
                         }
                         .background(
                             Theme.colors.background3,
                             in: RoundedRectangle(cornerRadius: 20)
                         )
+                        .onTapGesture {
+                            onFilmItemClick(item)
+                        }
                     }
                     
                     Button(action: { onViewAllFilms() }) {
@@ -413,7 +414,7 @@ struct FilmsListView: View {
                             Spacer()
                         }
                     }
-                    .frame(minHeight: 49)
+                    .frame(height: 49)
                     .background(
                         Theme.colors.accent,
                         in: RoundedRectangle(cornerRadius: 40)
