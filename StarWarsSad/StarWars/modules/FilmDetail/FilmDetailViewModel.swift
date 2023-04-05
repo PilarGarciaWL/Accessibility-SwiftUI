@@ -21,7 +21,7 @@ class FilmDetailViewModel: ObservableObject  {
     
     init(film: Film, chronology: [Film], repository: RepositoryProtocol) {
         self.film = film
-        self.chronology = chronology
+        self.chronology = Array(chronology.prefix(3))
         self.repository = repository
         getCharacters()
     }

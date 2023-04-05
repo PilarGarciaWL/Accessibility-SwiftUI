@@ -15,6 +15,8 @@
 		B41C9EB429CA09A60062C2E0 /* StarWarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */; };
 		B41C9EB629CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */; };
 		B41C9EC429CA120A0062C2E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */; };
+		B4523BF129DD9268002B1625 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4523BF029DD9268002B1625 /* AppTheme.swift */; };
+		B4523BF329DD929D002B1625 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4523BF229DD929D002B1625 /* Splash.storyboard */; };
 		B4853FE429CCA4DA00E997A9 /* HTTPAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */; };
 		B4853FE629CCA59B00E997A9 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */; };
 		B4853FE829CCA78E00E997A9 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4853FE729CCA78E00E997A9 /* NetworkResult.swift */; };
@@ -63,6 +65,8 @@
 		B41C9EB329CA09A60062C2E0 /* StarWarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITests.swift; sourceTree = "<group>"; };
 		B41C9EB529CA09A60062C2E0 /* StarWarsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B41C9EC329CA120A0062C2E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B4523BF029DD9268002B1625 /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		B4523BF229DD929D002B1625 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Splash.storyboard; path = ../../../../StarWarsSad/StarWars/modules/Splash/Splash.storyboard; sourceTree = "<group>"; };
 		B4853FE329CCA4DA00E997A9 /* HTTPAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAgent.swift; sourceTree = "<group>"; };
 		B4853FE529CCA59B00E997A9 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		B4853FE729CCA78E00E997A9 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		B4853FE929CCA7E200E997A9 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				B4523BF029DD9268002B1625 /* AppTheme.swift */,
 				B4853FEB29CCA80000E997A9 /* Logger.swift */,
 			);
 			path = utils;
@@ -283,6 +288,7 @@
 		B4F7B74529CE348700CF2A4F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				B4523BF229DD929D002B1625 /* Splash.storyboard */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			files = (
 				B41C9EA029CA09A60062C2E0 /* Preview Assets.xcassets in Resources */,
 				B41C9E9D29CA09A60062C2E0 /* Assets.xcassets in Resources */,
+				B4523BF329DD929D002B1625 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4523BF129DD9268002B1625 /* AppTheme.swift in Sources */,
 				B41C9E9B29CA09A50062C2E0 /* HomeView.swift in Sources */,
 				B4F7B73829CE1D0600CF2A4F /* Planets.swift in Sources */,
 				B4F7B73C29CE20EC00CF2A4F /* FilmsDTO.swift in Sources */,
@@ -602,8 +610,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -612,9 +621,12 @@
 				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldline.accessibility.starwars.happy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -633,8 +645,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,9 +656,12 @@
 				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldline.accessibility.starwars.happy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -185,7 +185,9 @@ struct FilmDetailView: View {
                                     RoundedRectangle(cornerRadius: 14)
                                         .stroke(Theme.colors.strokeLight, lineWidth: 1)
                                 )
-                        }.foregroundColor(Theme.colors.text)
+                        }
+                        .foregroundColor(Theme.colors.text)
+                        .padding(.vertical, 8)
                     Text(viewModel.film.title)
                         .font(Theme.typography.title1)
                         .foregroundColor(Theme.colors.text)

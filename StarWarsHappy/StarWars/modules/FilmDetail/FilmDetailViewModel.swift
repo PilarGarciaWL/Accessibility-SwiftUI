@@ -14,12 +14,14 @@ class FilmDetailViewModel: ObservableObject  {
     @Published var characters : [Character]  = []
     
     var film: Film
+    var chronology: [Film]
     
     private let repository: RepositoryProtocol
     private var disposables = Set<AnyCancellable>()
     
-    init(film: Film, repository: RepositoryProtocol) {
+    init(film: Film, chronology: [Film], repository: RepositoryProtocol) {
         self.film = film
+        self.chronology = Array(chronology.prefix(3))
         self.repository = repository
         getCharacters()
     }
