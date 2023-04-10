@@ -226,11 +226,12 @@ struct PlanetInfoView: View {
                             HStack(spacing: 8)  {
                                 Text("Climate:")
                                     .font(Theme.typography.body2)
-                                    .foregroundColor(Theme.colors.text)
-                                Text(planet.climate)
+                                + Text(planet.climate)
                                     .font(Theme.typography.body1)
-                                    .foregroundColor(Theme.colors.text)
                             }
+                            .lineLimit(nil)
+                            .foregroundColor(Theme.colors.text)
+                            .fixedSize(horizontal: false, vertical: true)
                             Spacer()
                         }
                         
@@ -240,13 +241,16 @@ struct PlanetInfoView: View {
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
                             HStack(spacing: 8)  {
-                                Text("Terrain:")
+                                Text("Terrain: ")
                                     .font(Theme.typography.body2)
                                     .foregroundColor(Theme.colors.text)
-                                Text(planet.terrain)
+                                + Text(planet.terrain)
                                     .font(Theme.typography.body1)
                                     .foregroundColor(Theme.colors.text)
                             }
+                            .lineLimit(nil)
+                            .foregroundColor(Theme.colors.text)
+                            .fixedSize(horizontal: false, vertical: true)
                             Spacer()
                         }
                         
@@ -256,13 +260,16 @@ struct PlanetInfoView: View {
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
                             HStack(spacing: 8)  {
-                                Text("Population:")
+                                Text("Population: ")
                                     .font(Theme.typography.body2)
                                     .foregroundColor(Theme.colors.text)
-                                Text(planet.population)
+                                + Text(planet.population)
                                     .font(Theme.typography.body1)
                                     .foregroundColor(Theme.colors.text)
                             }
+                            .lineLimit(nil)
+                            .foregroundColor(Theme.colors.text)
+                            .fixedSize(horizontal: false, vertical: true)
                             Spacer()
                         }
                         
@@ -272,16 +279,21 @@ struct PlanetInfoView: View {
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
                             HStack(spacing: 8)  {
-                                Text("Gravity:")
+                                Text("Gravity: ")
                                     .font(Theme.typography.body2)
                                     .foregroundColor(Theme.colors.text)
-                                Text(planet.gravity)
+                                + Text(planet.gravity)
                                     .font(Theme.typography.body1)
                                     .foregroundColor(Theme.colors.text)
                             }
+                            .lineLimit(nil)
+                            .foregroundColor(Theme.colors.text)
+                            .fixedSize(horizontal: false, vertical: true)
                             Spacer()
                         }
-                    }.padding(.all, 24)
+                    }
+                    .padding(.all, 24)
+                    .accessibilityElement(children: .combine)
                     
                     Button(action: { onReadMoreClicked() }) {
                         HStack {
@@ -289,10 +301,12 @@ struct PlanetInfoView: View {
                             Text("Read more of \(planet.name)")
                                 .foregroundColor(.black)
                                 .font(Theme.typography.body2)
+                                .lineLimit(nil)
                             Spacer()
                         }
                     }
                     .frame(minHeight: 49)
+                    .fixedSize(horizontal: false, vertical: true)
                     .background(
                         Theme.colors.accent,
                         in: RoundedRectangle(cornerRadius: 40)
@@ -369,7 +383,6 @@ struct FilmsListView: View {
                                     Text(item.title)
                                         .font(Theme.typography.title3)
                                         .multilineTextAlignment(.leading)
-                                        .lineLimit(1)
                                         .foregroundColor(Theme.colors.text)
                                     Text(item.openingCrawl)
                                         .font(Theme.typography.subtitle1)
@@ -442,12 +455,15 @@ struct FilmographyOptionView: View {
             HStack(spacing: 8) {
                 if isSelected {
                     Image(systemName: "checkmark")
+                        .resizable()
+                        .scaledToFit()
                         .foregroundColor(Theme.colors.text)
+                        .frame(width: 24, height: 24)
                 }
-                
                 Text(item.rawValue)
                     .foregroundColor(Theme.colors.text)
                     .font(Theme.typography.body2)
+                    .layoutPriority(1)
             }
             .padding(.vertical, 10)
             .padding(.horizontal, 16)
@@ -460,6 +476,8 @@ struct FilmographyOptionView: View {
                     .stroke(isSelected ? .clear : Theme.colors.strokeDark, lineWidth: 1)
             )
         }
+        .accessibilityAddTraits(.isButton)
+        .accessibilityHint("Select to filter filmography")
     }
 }
 

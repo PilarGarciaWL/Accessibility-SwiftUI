@@ -150,7 +150,7 @@ struct FilmDetailView: View {
                                         .multilineTextAlignment(.leading)
                                         .foregroundColor(Theme.colors.text)
                                 }
-                            }
+                            }.accessibilityElement(children: .combine)
                         }
                         
                         Spacer()

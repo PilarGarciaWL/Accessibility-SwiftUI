@@ -61,12 +61,12 @@ struct Theme {
     )
     
     static let typography: Typography = Typography(
-        title1: Font.system(size: 28, weight: .medium),
-        title2: Font.system(size: 24, weight: .medium),
-        title3: Font.system(size: 20, weight: .medium),
-        body1: Font.system(size: 18, weight: .regular),
-        body2: Font.system(size: 18, weight: .medium),
-        subtitle1: Font.system(size: 16, weight: .regular),
-        subtitle2: Font.system(size: 16, weight: .bold)
+        title1: Font.system(size: UIFontMetrics.default.scaledValue(for: 28), weight: .medium),
+        title2: Font.system(size: UIFontMetrics.default.scaledValue(for: 24), weight: .medium),
+        title3: Font.system(size: UIFontMetrics.default.scaledValue(for: 20), weight: .medium),
+        body1: Font.system(size: UIFontMetrics.default.scaledValue(for: 18), weight: .regular),
+        body2: Font.system(size: UIFontMetrics.default.scaledValue(for: 18), weight: .medium),
+        subtitle1: Font.system(size: UIFontMetrics.default.scaledValue(for: 16), weight: .regular),
+        subtitle2: Font.system(size: UIFontMetrics.default.scaledValue(for: 16), weight: .bold)
     )
 }
