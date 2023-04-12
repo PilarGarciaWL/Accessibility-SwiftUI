@@ -157,7 +157,7 @@ struct FilmDetailView: View {
                     }.padding(.all, 16)
                 }
                 .padding(.vertical, 24)
-                .edgesIgnoringSafeArea(.bottom)
+                .padding(.bottom, 40)
                 .background(
                     Theme.colors.background4,
                     in: RoundedRectangle(cornerRadius: 40)

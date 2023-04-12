@@ -193,6 +193,7 @@ struct PlanetInfoView: View {
                     VStack {
                         Image("planet")
                             .frame(width: 247, height: 240)
+                            .accessibilityLabel("Planet tattoine")
                         
                         HStack {
                             Text("Rotation:")
@@ -209,6 +210,7 @@ struct PlanetInfoView: View {
                             RoundedRectangle(cornerRadius: 41)
                                 .stroke(Theme.colors.strokeLight, lineWidth: 1)
                         )
+                        .accessibilityElement(children: .combine)
                     }
                 }
                 

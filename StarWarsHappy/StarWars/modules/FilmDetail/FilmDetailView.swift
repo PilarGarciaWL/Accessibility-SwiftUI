@@ -71,7 +71,7 @@ struct FilmDetailView: View {
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Theme.colors.text)
                             Spacer()
-                        }
+                        }.accessibilityElement(children: .combine)
                         
                         HStack(spacing: 8) {
                             Image("ic_producer")
@@ -88,7 +88,7 @@ struct FilmDetailView: View {
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Theme.colors.text)
                             Spacer()
-                        }
+                        }.accessibilityElement(children: .combine)
                         
                         HStack(spacing: 8) {
                             Image("ic_release")
@@ -105,7 +105,7 @@ struct FilmDetailView: View {
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Theme.colors.text)
                             Spacer()
-                        }
+                        }.accessibilityElement(children: .combine)
                     }
                     .padding(24)
                     .background(
